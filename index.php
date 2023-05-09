@@ -27,20 +27,17 @@
             <button type="submit" class="btn btn-primary">Calculate</button>
         </form>
         <?php
-            // Check if the form is submitted
+            
             if(isset($_POST['voltage']) && isset($_POST['current']) && isset($_POST['hour']) && isset($_POST['rate'])){
-                // Get the values from the form
                 $voltage = $_POST['voltage'];
                 $current = $_POST['current'];
                 $hour = $_POST['hour'];
                 $rate = $_POST['rate'];
 
-                // Calculate the power, energy, and total charge
                 $power = $voltage * $current;
                 $energy = $power * $hour / 1000;
                 $total = $energy * $rate * 100;
 
-                // Display the result
                 echo '<div class="alert alert-success mt-3">';
                 echo '<p>Power: ' . $power . ' W</p>';
                 echo '<p>Energy: ' . $energy . ' kWh</p>';
